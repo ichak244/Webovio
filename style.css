@@ -19,6 +19,8 @@
     --maximum-whiteness: #ebebeb;
     --hr-color: #C0C0C0;
     --v-dot: #666666;
+    --first-of-p: #b5b5bd;
+    --a-hover: #4946B4;
 }
 
 body {
@@ -500,7 +502,106 @@ nav.active {
 .products {
     background-color: white;
     margin-top: 50px;
+    gap: 30px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    height: 800px;
+}
+
+.products-element {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.products-element img {
+    max-width: 100%;
+}
+
+.products-element img,
+.products-element-text {
+    margin: 0;
+}
+
+.products-element-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.products-element-text h3,
+.products-element-text p,
+.products-element-text a {
+    margin: 0;
+}
+
+.products-element-text h3 {
+    font-weight: normal;
+    color: var(--v-dot);
+    font-size: 2rem;
+}
+
+.products-element-text p:first-of-type {
+    color: var(--first-of-p);
+    font-size: 15px;
+}
+
+.products-element-text p:nth-of-type(2) {
+    color: var(--p-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 250px;
+}
+
+.products-element-text a {
+    position: relative;
+    color: var(--hover-colorOne);
+    font-size: 1.2rem;
+    transition: color 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.products-element-text a:hover {
+    color: var(--a-hover);
+}
+
+.products-element-text a svg {
+    position: absolute;
+    top: 5px;
+    left: 110px;
+    fill: currentColor;
+}
+
+@media (max-width: 1150px) {
+
+    .products {
+        gap: 0;
+    }
+
+
+    .products-element picture img {
+        width: 210px;
+    }
+}
+
+@media(max-width:991px) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+        place-items: center;
+        padding: 0 clamp(1rem, calc((100% - 1110px) / 2), 1rem);
+    }
+
+
+    .products-element picture img {
+        width: auto;
+    }
+}
+
+@media(max-width:767px) {
+    .products {
+        grid-template-columns: 1fr;
+    }
 }
