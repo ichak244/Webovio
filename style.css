@@ -701,6 +701,16 @@ nav.active {
     }
 }
 
+@media(max-width:767px) {
+    .brands-ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 0;
+    }
+}
+
+
 /* simple  */
 
 .simple {
