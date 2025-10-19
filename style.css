@@ -839,7 +839,6 @@ nav.active {
 }
 
 .contacts-web ul {
-    align-self: center;
     display: flex;
     gap: 40px;
 }
@@ -860,6 +859,15 @@ nav.active {
     top: 5px;
     left: 110px; */
     fill: currentColor;
+}
+
+@media(max-width:767px) {
+    .contacts-web ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 15px;
+    }
 }
 
 /* footer */
